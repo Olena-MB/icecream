@@ -118,8 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/modal-review-scnd.js":[function(require,module,exports) {
-(() => {
-  const refs = {
+(function () {
+  var refs = {
     openModalBtn: document.querySelector('[data-modal-opn2]'),
     closeModalBtn: document.querySelector('[data-modal-cls2]'),
     modal: document.querySelector('[data-mdl2]')
@@ -159,7 +159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54572" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55454" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

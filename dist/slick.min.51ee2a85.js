@@ -11214,6 +11214,8 @@ return jQuery;
 
 },{"process":"../node_modules/process/browser.js"}],"slick/slick.min.js":[function(require,module,exports) {
 var define;
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 !function (i) {
   "use strict";
 
@@ -11241,7 +11243,7 @@ var define;
         centerMode: !1,
         centerPadding: "50px",
         cssEase: "ease",
-        customPaging: function (e, t) {
+        customPaging: function customPaging(e, t) {
           return i('<button type="button" />').text(t + 1);
         },
         dots: !1,
@@ -11343,10 +11345,10 @@ var define;
     }, {
       duration: s.options.speed,
       easing: s.options.easing,
-      step: function (i) {
+      step: function step(i) {
         i = Math.ceil(i), !1 === s.options.vertical ? (o[s.animType] = "translate(" + i + "px, 0px)", s.$slideTrack.css(o)) : (o[s.animType] = "translate(0px," + i + "px)", s.$slideTrack.css(o));
       },
-      complete: function () {
+      complete: function complete() {
         t && t.call();
       }
     })) : (s.applyTransition(), e = Math.ceil(e), !1 === s.options.vertical ? o[s.animType] = "translate3d(" + e + "px, 0px, 0px)" : o[s.animType] = "translate3d(0px," + e + "px, 0px)", s.$slideTrack.css(o), t && setTimeout(function () {
@@ -11358,7 +11360,7 @@ var define;
     return t && null !== t && (t = i(t).not(e.$slider)), t;
   }, e.prototype.asNavFor = function (e) {
     var t = this.getNavTarget();
-    null !== t && "object" == typeof t && t.each(function () {
+    null !== t && "object" == _typeof(t) && t.each(function () {
       var t = i(this).slick("getSlick");
       t.unslicked || t.slideHandler(e, !0);
     });
@@ -11388,7 +11390,9 @@ var define;
         o = this;
 
     if (!0 === o.options.dots) {
-      for (o.$slider.addClass("slick-dotted"), t = i("<ul />").addClass(o.options.dotsClass), e = 0; e <= o.getDotCount(); e += 1) t.append(i("<li />").append(o.options.customPaging.call(this, o, e)));
+      for (o.$slider.addClass("slick-dotted"), t = i("<ul />").addClass(o.options.dotsClass), e = 0; e <= o.getDotCount(); e += 1) {
+        t.append(i("<li />").append(o.options.customPaging.call(this, o, e)));
+      }
 
       o.$dots = t.appendTo(o.options.appendDots), o.$dots.find("li").first().addClass("slick-active");
     }
@@ -11442,7 +11446,9 @@ var define;
     if ("window" === r.respondTo ? n = a : "slider" === r.respondTo ? n = d : "min" === r.respondTo && (n = Math.min(a, d)), r.options.responsive && r.options.responsive.length && null !== r.options.responsive) {
       s = null;
 
-      for (o in r.breakpoints) r.breakpoints.hasOwnProperty(o) && (!1 === r.originalSettings.mobileFirst ? n < r.breakpoints[o] && (s = r.breakpoints[o]) : n > r.breakpoints[o] && (s = r.breakpoints[o]));
+      for (o in r.breakpoints) {
+        r.breakpoints.hasOwnProperty(o) && (!1 === r.originalSettings.mobileFirst ? n < r.breakpoints[o] && (s = r.breakpoints[o]) : n > r.breakpoints[o] && (s = r.breakpoints[o]));
+      }
 
       null !== s ? null !== r.activeBreakpoint ? (s !== r.activeBreakpoint || t) && (r.activeBreakpoint = s, "unslick" === r.breakpointSettings[s] ? r.unslick(s) : (r.options = i.extend({}, r.originalSettings, r.breakpointSettings[s]), !0 === e && (r.currentSlide = r.options.initialSlide), r.refresh(e)), l = s) : (r.activeBreakpoint = s, "unslick" === r.breakpointSettings[s] ? r.unslick(s) : (r.options = i.extend({}, r.originalSettings, r.breakpointSettings[s]), !0 === e && (r.currentSlide = r.options.initialSlide), r.refresh(e)), l = s) : null !== r.activeBreakpoint && (r.activeBreakpoint = null, r.options = r.originalSettings, !0 === e && (r.currentSlide = r.options.initialSlide), r.refresh(e), l = s), e || !1 === l || r.$slider.trigger("breakpoint", [r, l]);
     }
@@ -11543,8 +11549,12 @@ var define;
         t = 0,
         o = 0;
     if (!0 === i.options.infinite) {
-      if (i.slideCount <= i.options.slidesToShow) ++o;else for (; e < i.slideCount;) ++o, e = t + i.options.slidesToScroll, t += i.options.slidesToScroll <= i.options.slidesToShow ? i.options.slidesToScroll : i.options.slidesToShow;
-    } else if (!0 === i.options.centerMode) o = i.slideCount;else if (i.options.asNavFor) for (; e < i.slideCount;) ++o, e = t + i.options.slidesToScroll, t += i.options.slidesToScroll <= i.options.slidesToShow ? i.options.slidesToScroll : i.options.slidesToShow;else o = 1 + Math.ceil((i.slideCount - i.options.slidesToShow) / i.options.slidesToScroll);
+      if (i.slideCount <= i.options.slidesToShow) ++o;else for (; e < i.slideCount;) {
+        ++o, e = t + i.options.slidesToScroll, t += i.options.slidesToScroll <= i.options.slidesToShow ? i.options.slidesToScroll : i.options.slidesToShow;
+      }
+    } else if (!0 === i.options.centerMode) o = i.slideCount;else if (i.options.asNavFor) for (; e < i.slideCount;) {
+      ++o, e = t + i.options.slidesToScroll, t += i.options.slidesToScroll <= i.options.slidesToShow ? i.options.slidesToScroll : i.options.slidesToShow;
+    } else o = 1 + Math.ceil((i.slideCount - i.options.slidesToShow) / i.options.slidesToScroll);
     return o - 1;
   }, e.prototype.getLeft = function (i) {
     var e,
@@ -11563,7 +11573,9 @@ var define;
         o = 0,
         s = [];
 
-    for (!1 === e.options.infinite ? i = e.slideCount : (t = -1 * e.options.slidesToScroll, o = -1 * e.options.slidesToScroll, i = 2 * e.slideCount); t < i;) s.push(t), t = o + e.options.slidesToScroll, o += e.options.slidesToScroll <= e.options.slidesToShow ? e.options.slidesToScroll : e.options.slidesToShow;
+    for (!1 === e.options.infinite ? i = e.slideCount : (t = -1 * e.options.slidesToScroll, o = -1 * e.options.slidesToScroll, i = 2 * e.slideCount); t < i;) {
+      s.push(t), t = o + e.options.slidesToScroll, o += e.options.slidesToScroll <= e.options.slidesToShow ? e.options.slidesToScroll : e.options.slidesToShow;
+    }
 
     return s;
   }, e.prototype.getSlick = function () {
@@ -11622,7 +11634,9 @@ var define;
       tabindex: "0"
     }).end());
 
-    for (var s = e.currentSlide, n = s + e.options.slidesToShow; s < n; s++) e.$slides.eq(s).attr("tabindex", 0);
+    for (var s = e.currentSlide, n = s + e.options.slidesToShow; s < n; s++) {
+      e.$slides.eq(s).attr("tabindex", 0);
+    }
 
     e.activateADA();
   }, e.prototype.initArrowEvents = function () {
@@ -11693,7 +11707,9 @@ var define;
         o,
         s,
         n = this;
-    if (!0 === n.options.centerMode ? !0 === n.options.infinite ? s = (o = n.currentSlide + (n.options.slidesToShow / 2 + 1)) + n.options.slidesToShow + 2 : (o = Math.max(0, n.currentSlide - (n.options.slidesToShow / 2 + 1)), s = n.options.slidesToShow / 2 + 1 + 2 + n.currentSlide) : (o = n.options.infinite ? n.options.slidesToShow + n.currentSlide : n.currentSlide, s = Math.ceil(o + n.options.slidesToShow), !0 === n.options.fade && (o > 0 && o--, s <= n.slideCount && s++)), t = n.$slider.find(".slick-slide").slice(o, s), "anticipated" === n.options.lazyLoad) for (var r = o - 1, l = s, d = n.$slider.find(".slick-slide"), a = 0; a < n.options.slidesToScroll; a++) r < 0 && (r = n.slideCount - 1), t = (t = t.add(d.eq(r))).add(d.eq(l)), r--, l++;
+    if (!0 === n.options.centerMode ? !0 === n.options.infinite ? s = (o = n.currentSlide + (n.options.slidesToShow / 2 + 1)) + n.options.slidesToShow + 2 : (o = Math.max(0, n.currentSlide - (n.options.slidesToShow / 2 + 1)), s = n.options.slidesToShow / 2 + 1 + 2 + n.currentSlide) : (o = n.options.infinite ? n.options.slidesToShow + n.currentSlide : n.currentSlide, s = Math.ceil(o + n.options.slidesToShow), !0 === n.options.fade && (o > 0 && o--, s <= n.slideCount && s++)), t = n.$slider.find(".slick-slide").slice(o, s), "anticipated" === n.options.lazyLoad) for (var r = o - 1, l = s, d = n.$slider.find(".slick-slide"), a = 0; a < n.options.slidesToScroll; a++) {
+      r < 0 && (r = n.slideCount - 1), t = (t = t.add(d.eq(r))).add(d.eq(l)), r--, l++;
+    }
     e(t), n.slideCount <= n.options.slidesToShow ? e(n.$slider.find(".slick-slide")) : n.currentSlide >= n.slideCount - n.options.slidesToShow ? e(n.$slider.find(".slick-cloned").slice(0, n.options.slidesToShow)) : 0 === n.currentSlide && e(n.$slider.find(".slick-cloned").slice(-1 * n.options.slidesToShow));
   }, e.prototype.loadSlider = function () {
     var i = this;
@@ -11764,10 +11780,14 @@ var define;
     if ("array" === i.type(n) && n.length) {
       s.respondTo = s.options.respondTo || "window";
 
-      for (e in n) if (o = s.breakpoints.length - 1, n.hasOwnProperty(e)) {
-        for (t = n[e].breakpoint; o >= 0;) s.breakpoints[o] && s.breakpoints[o] === t && s.breakpoints.splice(o, 1), o--;
+      for (e in n) {
+        if (o = s.breakpoints.length - 1, n.hasOwnProperty(e)) {
+          for (t = n[e].breakpoint; o >= 0;) {
+            s.breakpoints[o] && s.breakpoints[o] === t && s.breakpoints.splice(o, 1), o--;
+          }
 
-        s.breakpoints.push(t), s.breakpointSettings[t] = n[e].settings;
+          s.breakpoints.push(t), s.breakpointSettings[t] = n[e].settings;
+        }
       }
 
       s.breakpoints.sort(function (i, e) {
@@ -11839,10 +11859,14 @@ var define;
         l = !1;
     if ("object" === i.type(arguments[0]) ? (o = arguments[0], l = arguments[1], n = "multiple") : "string" === i.type(arguments[0]) && (o = arguments[0], s = arguments[1], l = arguments[2], "responsive" === arguments[0] && "array" === i.type(arguments[1]) ? n = "responsive" : void 0 !== arguments[1] && (n = "single")), "single" === n) r.options[o] = s;else if ("multiple" === n) i.each(o, function (i, e) {
       r.options[i] = e;
-    });else if ("responsive" === n) for (t in s) if ("array" !== i.type(r.options.responsive)) r.options.responsive = [s[t]];else {
-      for (e = r.options.responsive.length - 1; e >= 0;) r.options.responsive[e].breakpoint === s[t].breakpoint && r.options.responsive.splice(e, 1), e--;
+    });else if ("responsive" === n) for (t in s) {
+      if ("array" !== i.type(r.options.responsive)) r.options.responsive = [s[t]];else {
+        for (e = r.options.responsive.length - 1; e >= 0;) {
+          r.options.responsive[e].breakpoint === s[t].breakpoint && r.options.responsive.splice(e, 1), e--;
+        }
 
-      r.options.responsive.push(s[t]);
+        r.options.responsive.push(s[t]);
+      }
     }
     l && (r.unload(), r.reinit());
   }, e.prototype.setPosition = function () {
@@ -11872,9 +11896,13 @@ var define;
         s = this;
 
     if (!0 === s.options.fade && (s.options.centerMode = !1), !0 === s.options.infinite && !1 === s.options.fade && (t = null, s.slideCount > s.options.slidesToShow)) {
-      for (o = !0 === s.options.centerMode ? s.options.slidesToShow + 1 : s.options.slidesToShow, e = s.slideCount; e > s.slideCount - o; e -= 1) t = e - 1, i(s.$slides[t]).clone(!0).attr("id", "").attr("data-slick-index", t - s.slideCount).prependTo(s.$slideTrack).addClass("slick-cloned");
+      for (o = !0 === s.options.centerMode ? s.options.slidesToShow + 1 : s.options.slidesToShow, e = s.slideCount; e > s.slideCount - o; e -= 1) {
+        t = e - 1, i(s.$slides[t]).clone(!0).attr("id", "").attr("data-slick-index", t - s.slideCount).prependTo(s.$slideTrack).addClass("slick-cloned");
+      }
 
-      for (e = 0; e < o + s.slideCount; e += 1) t = e, i(s.$slides[t]).clone(!0).attr("id", "").attr("data-slick-index", t + s.slideCount).appendTo(s.$slideTrack).addClass("slick-cloned");
+      for (e = 0; e < o + s.slideCount; e += 1) {
+        t = e, i(s.$slides[t]).clone(!0).attr("id", "").attr("data-slick-index", t + s.slideCount).appendTo(s.$slideTrack).addClass("slick-cloned");
+      }
 
       s.$slideTrack.find(".slick-cloned").find("[id]").each(function () {
         i(this).attr("id", "");
@@ -11993,7 +12021,9 @@ var define;
         n = Array.prototype.slice.call(arguments, 1),
         r = o.length;
 
-    for (i = 0; i < r; i++) if ("object" == typeof s || void 0 === s ? o[i].slick = new e(o[i], s) : t = o[i].slick[s].apply(o[i].slick, n), void 0 !== t) return t;
+    for (i = 0; i < r; i++) {
+      if ("object" == _typeof(s) || void 0 === s ? o[i].slick = new e(o[i], s) : t = o[i].slick[s].apply(o[i].slick, n), void 0 !== t) return t;
+    }
 
     return o;
   };
@@ -12026,7 +12056,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54572" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55454" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
