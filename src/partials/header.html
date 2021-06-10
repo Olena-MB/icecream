@@ -1,0 +1,124 @@
+<header class="header">
+    
+    <div class="header--geometry">
+        <a href="./index.html" class="logo__link">
+            <picture>
+                <source srcset="./images/desktop/logo_img1_desktop.png 1x, ./images/desktop/logo_img1@2x_desktop.png 2x"
+                    media="(min-width: 1200px)" type="image/png">
+                <source srcset="./images/tablet/logo_img1_tablet.png 1x, ./images/tablet/logo_img1@2x_tablet.png 2x"
+                    media="(min-width: 768px)" type="image/png">
+                <source srcset="./images/mobile/logo_img1_mobile.png 1x, ./images/mobile/logo_img1@2x_mobile.png 2x"
+                    media="(max-width: 767px)" type="image/png">
+                <img src="./images/tablet/logo_img1_tablet.png" alt="логотип">
+            </picture>
+        </a>
+
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li><a href="./index.html" class="header__nav-item">Home</a></li>
+                <li><a href="#gallery" class="header__nav-item">About us</a></li>
+                <li><a href="#about" class="header__nav-item">How it’s made?</a></li>
+                <li><a href="#products" class="header__nav-item">Our products</a></li>
+                <li><a href="#contact" class="header__nav-item">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <div class="header--tablet">
+            <button type="button" class="mobile__button" aria-expanded="false" data-menu-button>
+                <svg class="mobile__icon">
+                    <use class="menu__icon-open" href="./images/symbol-defs.svg#burger"></use>
+                    <use class="menu__icon-close" href="./images/symbol-defs.svg#close"></use>
+                </svg>
+            </button>
+    
+            <button type="button" class="header__btn-buy">Buy now
+                <svg class="header__buy-icon">
+                    <use href="./images/symbol-defs.svg#icon-arrow"></use>
+                </svg>
+            </button>
+        </div>
+    
+    </div>
+    
+    <div class="container">
+        <div class="hero__background"></div>
+        <div class="hero__background-image"></div>
+
+        
+
+        
+        <div class="hero__numbers">
+            <p class="numbers">16</p>
+            <p class="figures">cafes</p>
+            <p class="numbers">23</p>
+            <p class="figures">food trucks</p>
+        </div>
+
+        <div class="numbers__background"></div>
+        <div class="figures__background"></div>
+            
+
+        <div class="hero">
+            <h1 class="hero__text-white">ice cream<br>made with<br><span class="hero__text-red">passion</span></h1>
+               
+    
+            <ul class="hero__list">
+                <li class="hero__item"><a href="#products" class="hero__link-1">Products</a></li>
+                <li><a href="#about" class="hero__link-2">How it’s made?</a></li>
+            </ul>
+
+
+            <div class="eco">
+                
+                <picture class="eco-img">
+                    <source srcset="./images/desktop/header_img3_desktop.png 1x, ./images/desktop/header_img3@2x_desktop.png 2x" 
+                        media="(min-width: 1200px)" type="image/png">
+                    <source srcset="./images/tablet/header_img3_tablet.png 1x, ./images/tablet/header_img3@2x_tablet.png 2x"
+                        media="(min-width: 768px)" type="image/png">
+                        <img src="./images/tablet/header_img3_tablet.png" alt="кувшин с молоком">
+                </picture>
+                
+                <div class="eco-text__box">
+                    <p class="eco-text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, <br> sed do eiusmod tempor <br> incididunt ut labore et</p>
+                    
+                    
+                    <button type="button" class="eco-btn">
+                            <svg class="eco-icon">
+                                <use href="./images/symbol-defs.svg#icon-products"></use>
+                            </svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <picture class="tasty-pic">
+                <source srcset="./images/desktop/header_img2_desktop.png 1x, ./images/desktop/header_img2@2x_desktop.png 2x"
+                    media="(min-width: 1200px)" type="image/png">
+                <source srcset="./images/tablet/header_img2_tablet.png 1x, ./images/tablet/header_img2@2x_tablet.png 2x"
+                    media="(min-width: 768px)" type="image/png">
+                <img src="./images/tablet/header_img2_tablet.png" alt="девушка">
+            </picture>
+
+                
+
+        </div>
+<!-- мобильное меню -->
+        <div class="mobile-menu" data-menu>
+            
+            <button type="button" class="mobile-menu__btn-buy">Buy now
+                <svg class="btn-buy__icon"><use href="./images/symbol-defs.svg#icon-arrow"></use></svg>
+            </button>
+            
+            <nav>
+                <ul class="nav__list">
+                    <li><a href="./index.html" class="nav__item">Home</a></li>
+                    <li><a href="#gallery" class="nav__item">About us</a></li>
+                    <li><a href="#about" class="nav__item">How it’s made?</a></li>
+                    <li><a href="#products" class="nav__item">Our products</a></li>
+                    <li><a href="#contact" class="nav__item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+

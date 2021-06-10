@@ -1,0 +1,100 @@
+<section class="about section" id="about">
+  <div class="container">
+    <label class="about__label">tradition and love</label>
+    <h2 class="about__title">how it’s made?</h2>
+    <div class="about__flexbox">
+      <picture class="content-box">
+        <source
+          srcset="
+            ./images/tablet/about_img1_tablet.png    1x,
+            ./images/tablet/about_img1@2x_tablet.png 2x
+          "
+          media="(min-width: 768px)"
+          type="image/png"
+        />
+
+        <source
+          srcset="
+            ./images/mobile/about_img1_mobile.png    1x,
+            ./images/mobile/about_img1@2x_mobile.png 2x
+          "
+          media="(min-width: 320px)"
+          type="image/png"
+        />
+
+        <img src="./images/mobile/about_img1_mobile.png" alt="корова и молоко" />
+      </picture>
+      <div class="about__content content-box">
+        <p class="about__text about__text--black">
+          Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus
+          lorem eget, egestas eros. Maecenas eleifend erat at justo fringilla.
+        </p>
+        <p class="about__text about__text--grey">
+          Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci
+          in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna
+          maximus. Cras massa nibh, tincidunt.
+        </p>
+        <p class="about__text about__text--grey">Aliquam erat volutpat. Aenean accumsan.</p>
+        <button class="about__button" type="button" data-modal-open>
+          Read more
+          <svg class="about__icone">
+            <use href="./images/symbol-defs.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="about-modal container">
+        <button class="about-modal__btn-close" type="button" data-modal-close>
+          <svg class="about-modal_icon-close">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <div class="about-modal__content">
+          <p class="about__text about__text--black">
+            Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus
+            lorem eget, egestas eros. Maecenas eleifend erat at justo fringilla.
+          </p>
+          <p class="about__text about__text--grey">
+            Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus
+            orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat
+            urna maximus. Cras massa nibh, tincidunt.
+          </p>
+          <p class="about__text about__text--grey">
+            Aliquam erat volutpat. Aenean accumsan. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Iste eum rem eos numquam saepe eius esse praesentium tempora minima
+            exercitationem expedita ullam laboriosam autem quibusdam omnis, ab sequi voluptatem
+            reiciendis?
+          </p>
+          <p class="about__text about__text--grey">
+            Aliquam erat volutpat. Aenean accumsan. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Iste eum rem eos numquam saepe eius esse praesentium tempora minima
+            exercitationem expedita ullam laboriosam autem quibusdam omnis, ab sequi voluptatem
+            reiciendis?
+          </p>
+
+          <p class="about__text about__text--grey">
+            Aliquam erat volutpat. Aenean accumsan. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Iste eum rem eos numquam saepe eius esse praesentium tempora minima
+            exercitationem expedita ullam laboriosam autem quibusdam omnis, ab sequi voluptatem
+            reiciendis?
+          </p>
+          <p class="about__text about__text--grey">
+            Aliquam erat volutpat. Aenean accumsan. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Iste eum rem eos numquam saepe eius esse praesentium tempora minima
+            exercitationem expedita ullam laboriosam autem quibusdam omnis, ab sequi voluptatem
+            reiciendis?
+          </p>
+          <p class="about__text about__text--grey">
+            Aliquam erat volutpat. Aenean accumsan. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Iste eum rem eos numquam saepe eius esse praesentium tempora minima
+            exercitationem expedita ullam laboriosam autem quibusdam omnis, ab sequi voluptatem
+            reiciendis?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

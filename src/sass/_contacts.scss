@@ -1,0 +1,327 @@
+.contacts__section {
+  padding-top: 85px;
+  padding-bottom: 110px;
+
+  background-image: linear-gradient(#ffffff 10%, #fff5f6 10%, #fff5f6 100%);
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(#ffffff 22%, #fff5f6 22%, #fff5f6 100%);
+  }
+}
+.contacts__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.contacts__item {
+  background: #ffffff;
+  box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+  border-radius: 24px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 220px;
+    height: 427px;
+    padding: 43px 20px;
+    flex-basis: 100%;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 3 * 20px) / 3);
+    flex-wrap: nowrap;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    max-width: 220px;
+    height: 544px;
+    padding: 50px 30px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 330px;
+    height: 572px;
+
+    padding: 56px 43px;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.contacts__title {
+  font-family: DM Sans;
+
+  font-weight: 500;
+
+  line-height: 1.86;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 24px;
+    font-size: 12px;
+
+    &.cafe {
+      width: 80px;
+      height: 16px;
+    }
+    &.food-truck {
+      width: 130px;
+      height: 16px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    font-size: 16px;
+    &.cafe {
+      width: 73px;
+      height: 28px;
+    }
+    &.food-truck {
+      width: 138px;
+      height: 28px;
+    }
+  }
+
+  &.cafe {
+    background-color: $cafe-color;
+  }
+  &.food-truck {
+    background-color: $foodtruck-color;
+  }
+}
+.contacts__subtitle {
+  font-family: DM Sans;
+  font-weight: 500;
+
+  line-height: 1.86;
+  letter-spacing: 0.04em;
+
+  color: #000000;
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    &.city {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    &.city {
+      margin-bottom: 14px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+.contacts__text {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+
+  color: $discription_text-color;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.66;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+.contacts__discription {
+  margin-bottom: 24px;
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #e1e1e1;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 25px;
+    }
+    @media screen and (min-width: 768px) {
+      margin-top: 30px;
+    }
+  }
+}
+.contacts__working-time {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 25px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 32px;
+  }
+  &::after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #e1e1e1;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 25px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-top: 30px;
+    }
+    @media screen and (min-width: 1200px) {
+      margin-top: 32px;
+    }
+  }
+}
+.contacts__time {
+  font-family: DM Sans;
+  font-weight: 500;
+
+  line-height: 1.86;
+
+  color: $text-color;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
+.contacts__link {
+  font-family: DM Sans;
+
+  font-weight: 500;
+
+  color: $discription_text-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    line-height: 1.5;
+    &:focus,
+    &:hover {
+      color: $text-color;
+      font-size: 13px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.8;
+    &:focus,
+    &:hover {
+      color: $text-color;
+      font-size: 15px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    &:focus,
+    &:hover {
+      color: $text-color;
+      font-size: 17px;
+    }
+  }
+}
+.contacts__buttons {
+  margin-top: 54px;
+  text-align: center;
+}
+.contacts__btn {
+  background: #ffffff;
+  border-radius: 22px;
+
+  border: none;
+  text-align: center;
+  font-family: DM Sans;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 0;
+  color: $brand-color;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms;
+
+  &:hover,
+  :focus {
+    background: $background-color-hover;
+  }
+  &--current {
+    background: $brand-color;
+    color: #ffffff;
+    &:hover,
+    &:focus {
+      background: $brand-color;
+      color: #ffffff;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    width: 162px;
+    height: 44px;
+    &-label {
+      margin-right: 8px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    width: 176px;
+    height: 44px;
+
+    &-label {
+      margin-right: 10px;
+    }
+    &--current {
+      width: 192px;
+      height: 44px;
+    }
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.contacts__svg {
+  width: 8px;
+  height: 8px;
+  fill: none;
+  stroke: $brand-color;
+
+  &--current {
+    stroke: #ffffff;
+  }
+}

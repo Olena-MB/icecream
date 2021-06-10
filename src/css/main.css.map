@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "mappings": ";AAAA;;;GAGG",
+    "sources": [
+        "../src/sass/main.scss",
+        "../src/sass/_header.scss",
+        "../src/sass/_products.scss",
+        "../src/sass/_about.scss",
+        "../src/sass/_advantages.scss",
+        "../src/sass/_gallery.scss",
+        "../src/sass/_reviews.scss",
+        "../src/sass/_contacts.scss",
+        "../src/sass/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

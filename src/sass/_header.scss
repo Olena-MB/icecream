@@ -1,0 +1,614 @@
+// Хэдер
+.header {
+  background-color: $background_header-color;
+  padding-top: 6px;
+  min-width: 320px;
+  max-width: 480px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-top: 31px;
+    // height: 399px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+    padding-top: 37px;
+    // height: 665px;
+  }
+}
+
+.header--geometry {
+  background-color: $background_header-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: 46px;
+    justify-content: left;
+  }
+}
+
+.header--tablet {
+  display: flex;
+  align-items: center;
+
+  // @media screen and (min-width: 1200px) {
+  //   margin-right: 10px;
+  // }
+}
+
+.header__btn-buy {
+  display: none;
+
+  &:hover,
+  &:focus {
+    background-color: #ecebeb;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    padding-left: 37px;
+    width: 160px;
+    height: 44px;
+    border-radius: 22px;
+    background: #ffffff;
+    border: none;
+    font-family: $secondary-font-family;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.31;
+    color: $brand-color;
+    cursor: pointer;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 20px;
+  }
+}
+
+.header__buy-icon {
+  display: block;
+  width: 8px;
+  height: 10px;
+  margin-left: 12px;
+  margin-right: 17px;
+  fill: none;
+  stroke: $brand-color;
+}
+
+.logo__link {
+  @extend .link;
+  width: 200px;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 110px;
+  }
+}
+
+.header__nav {
+  display: none;
+  z-index: 5;
+
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+  }
+}
+
+.header__nav-list {
+  display: flex;
+}
+
+.header__nav-item {
+  @extend .link;
+  display: block;
+  font-family: $secondary-font-family;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.3;
+  color: $background-color;
+  margin-right: 30px;
+
+  &:not(:last-child) {
+    padding-right: 35px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $brand-color-hover;
+  }
+}
+
+.header__nav-item :not(:last-child) {
+  padding-right: 10px;
+}
+
+// Герой
+
+.hero {
+  padding-top: 137px;
+  padding-bottom: 150px;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 15px;
+    padding-bottom: 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 84px;
+  }
+}
+
+.hero__background {
+  background-color: $text-color;
+  width: 346px;
+  height: 344px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(15px, 20px);
+  z-index: 0;
+
+  @media screen and (min-width: 768px) {
+    transform: translate(275px, -50px);
+    width: 324px;
+    height: 322px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    transform: translate(350px, -35px);
+    width: 538px;
+    height: 538px;
+  }
+}
+
+.hero__background-image {
+  background: url(../images/mobile/header_img1_mobile.png);
+  position: absolute;
+  // z-index: 10;
+  width: 171px;
+  height: 410px;
+  background-repeat: no-repeat;
+  transform: translate(98px, 35px);
+
+  @media screen and (min-width: 768px) {
+    background: url(../images/tablet/header_img1_tablet.png);
+    background-repeat: no-repeat;
+    transform: translate(350px, -15px);
+  }
+  @media screen and (min-width: 1200px) {
+    background: url(../images/desktop/header_img1_desktop.png);
+    background-repeat: no-repeat;
+    width: 236px;
+    height: 557px;
+    transform: translate(440px, 20px);
+  }
+}
+
+.hero__text-white {
+  font-family: $main-font-family;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $background-color;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    line-height: 1.14;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 38px;
+    line-height: 1.14;
+  }
+}
+.hero__text-red {
+  display: block;
+  font-size: 47px;
+  font-family: $main-font-family;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $brand-color;
+  margin: 0;
+  margin-bottom: 19px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 35px;
+    line-height: 1.14;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 59px;
+    margin-bottom: 25px;
+  }
+}
+
+.hero__list {
+  @extend .list;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 19px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 56px;
+  }
+}
+
+.hero__item {
+  padding-right: 8px;
+
+  @media screen and (min-width: 1200px) {
+    padding-right: 15px;
+  }
+}
+
+.hero__btn {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero__link-1 {
+  @extend .link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $secondary-font-family;
+  font-size: 8px;
+  line-height: 1.25;
+  color: $background-color;
+  background: $brand-color;
+  border-radius: 20px;
+  width: 63px;
+  height: 24px;
+
+  &:hover,
+  &:focus {
+    background: $brand-color-hover;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 104px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+.hero__link-2 {
+  @extend .link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $secondary-font-family;
+  font-size: 8px;
+  line-height: 1.25;
+  color: $brand-color;
+  background: $background-color;
+  border-radius: 20px;
+  width: 83px;
+  height: 24px;
+
+  &:hover,
+  &:focus {
+    background: $background-color-hover;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 138px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+.eco {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 28px;
+  }
+}
+
+.eco-text {
+  font-family: $secondary-font-family;
+  font-size: 8px;
+  line-height: 1.5;
+  color: $background-color;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+}
+
+.eco-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  background: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+
+  &:hover,
+  &:focus {
+    background: $background-color-hover;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 26px;
+    height: 26px;
+    margin-top: 20px;
+  }
+}
+
+.eco-icon {
+  width: 12px;
+  height: 12px;
+
+  fill: $brand-color;
+}
+
+.eco-text__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__numbers {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    left: 664px;
+    z-index: 100;
+    margin-top: 14px;
+    width: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 1010px;
+    z-index: 100;
+    margin-top: 78px;
+    width: 75px;
+  }
+}
+
+.numbers {
+  font-family: $main-font-family;
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $brand-color;
+
+  text-align: right;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 46px;
+  }
+}
+
+.numbers__background {
+  background-image: url(../images/tablet/ellipse_tablet.png);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: 716px;
+  top: 99px;
+
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/desktop/ellipse_desktop.png);
+    width: 30px;
+    height: 30px;
+    left: 1073px;
+    top: 160px;
+  }
+}
+
+.figures {
+  margin-bottom: 14px;
+  font-family: $secondary-font-family;
+  font-size: 10px;
+  line-height: 1.25;
+  color: $background-color;
+  text-transform: none;
+  text-align: right;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+}
+
+.figures__background {
+  background-image: url(../images/tablet/ellipse_tablet.png);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: 716px;
+  top: 158px;
+
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/desktop/ellipse_desktop.png);
+    width: 30px;
+    height: 30px;
+    left: 1073px;
+    top: 245px;
+  }
+}
+
+.tasty-pic {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    left: 532px;
+    top: 188px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 680px;
+    top: 350px;
+  }
+}
+
+// Мобильное меню
+
+.mobile-menu {
+  @extend .container;
+  padding-left: 21px;
+  background-color: $mobile-menu-color;
+  opacity: 0;
+  // width: 100%;
+  min-width: 320px;
+  // max-width: 480px;
+  width: 100%;
+  height: 110vh;
+  position: fixed;
+  z-index: 900;
+  transform: translate(460px, -490px);
+  transition: transform, 500ms;
+  &.is-open {
+    transform: translate(-20px, -500px);
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 254px;
+    padding-left: 24px;
+    transform: translate(950px, -430px);
+    &.is-open {
+      transform: translate(415px, -430px);
+      opacity: 1;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.mobile__button {
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 999;
+  transition: transform 500ms;
+
+  &.is-open .menu__icon-open {
+    display: none;
+  }
+
+  &.is-open .menu__icon-close {
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    &.is-open {
+      transform: translate(210px, -30px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: none;
+    }
+  }
+}
+
+.mobile__icon {
+  width: 20px;
+  height: 12px;
+  fill: $brand-color;
+}
+
+.menu__icon-close {
+  display: none;
+}
+
+.mobile-menu__btn-buy {
+  display: flex;
+  align-items: center;
+
+  width: 209px;
+  height: 44px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: none;
+  padding-left: 50px;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-right: 20px;
+
+  font-family: $secondary-font-family;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.31;
+  color: $brand-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: $background-color-hover;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 186px;
+    padding-right: 15px;
+  }
+}
+
+.btn-buy__icon {
+  display: block;
+  width: 8px;
+  height: 10px;
+  margin-left: 20px;
+  fill: none;
+  stroke: $brand-color;
+}
+
+.nav__list {
+  @extend .list;
+}
+
+.nav__item {
+  @extend .link;
+  font-family: $secondary-font-family;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $background-color;
+  border-top: 1px solid #e18298;
+  border-bottom: 1px solid #e18298;
+  padding-top: 13px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+
+  &:hover,
+  &:focus {
+    color: $brand-color-hover;
+  }
+}
