@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://meelenych.github.io/15-final",
+  "homepage": "https://olena-mb.github.io/icecream/",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /15-final/"
+    "build": "parcel build src/*.html --public-url /icecream/"
   },
   "repository": {
     "type": "git",

@@ -118,8 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/modal.js":[function(require,module,exports) {
-(function () {
-  var refs = {
+(() => {
+  const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
     modal: document.querySelector('[data-modal]')
@@ -159,7 +159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55454" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54572" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
